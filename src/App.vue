@@ -1,32 +1,36 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+  <TheLayout>
     <router-view />
-  </div>
+  </TheLayout>
 </template>
 
+<script>
+import TheLayout from './components/TheLayout.vue';
+
+export default {
+  name: 'App',
+  components: {
+    TheLayout,
+  },
+};
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
 }
 
-#nav {
-  padding: 30px;
+body {
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+* {
+  margin: 0;
+  padding: 0;
 }
 </style>
